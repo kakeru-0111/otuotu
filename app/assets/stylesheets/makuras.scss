@@ -1,0 +1,19 @@
+// Place all the styles related to the makuras controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tweets-container{
+    display: grid;
+    width: 600px;
+    grid-template-columns:1fr 1fr 1fr;
+    margin: auto;
+    // gap: 50px 10px;
+    height:600px;
+    grid-template-rows: 1fr 1fr 1fr; 
+}
+
+.tweet{
+    border:solid black;
+    text-align: center;
+
+}
