@@ -1,0 +1,22 @@
+databases:
+  - name: otuotu_DB
+    databaseName: otuotu_db
+    user: otuotu
+    region: singapore
+
+services:
+  - type: web
+    name: otuotu
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: otuotu_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
